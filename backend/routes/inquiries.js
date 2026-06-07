@@ -29,5 +29,27 @@ router.post('/', async (req, res) => {
     res.status(500).json({ success: false, error: err.message });
   }
 });
+const authMiddleware = require('../middleware/authMiddleware');
 
+// GET all leads (admin only)
+router.get('/leads', authMiddleware, async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM leads ORDER BY created_at DESC');
+    res.json({ success: true, leads: result.rows });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// GET all inquiries (admin only)
+router.get('/all', authMiddleware, async (req, res) => {
+  try {
+    const result = await pool.query(
+      'SELECT i.*, p.name as product_name FROM inquiries i LEFT JOIN products p ON i.product_id = p.id ORDER BY i.created_at DESC'
+    );
+    res.json({ success: true, inquiries: result.rows });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
 module.exports = router;

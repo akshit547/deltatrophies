@@ -47,14 +47,8 @@ function Contact() {
               ))}
             </div>
 
-            {/* WhatsApp Button */}
-            
-              href="https://wa.me/910000000000"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-500 text-white font-bold px-6 py-3 mt-10 tracking-wider uppercase text-sm transition-colors">
-              WhatsApp Us
-            </a>
+            <br />
+            </div>
           </div>
 
           {/* Form */}
@@ -110,7 +104,6 @@ function Contact() {
 
         </div>
       </div>
-    </div>
   );
 }
 
