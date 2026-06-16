@@ -30,6 +30,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/distributors" element={<Distributors />} />
       </Routes>
+      
       <Footer />
     </BrowserRouter>
   );

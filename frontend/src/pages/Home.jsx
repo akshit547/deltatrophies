@@ -24,58 +24,114 @@ function Home() {
   return (
     <div className="bg-darkbg min-h-screen">
 
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-between max-w-7xl mx-auto px-6 pt-24">
-        <div className="max-w-2xl">
-          <p className="text-gold text-xs tracking-[0.4em] uppercase mb-6">
-            Delta Industries · Est. 1998
-          </p>
-          <h1 className="text-white text-6xl font-bold leading-tight mb-6">
-            Crafting <span className="text-gold">excellence,</span>
-            <br />one trophy at a time.
-          </h1>
-          <p className="text-white/50 text-lg leading-relaxed mb-10">
-            Twenty-seven years of sculpting recognition. From hand-finished
-            walnut bases to optical crystal sculptures — Delta crafts the
-            moments that organisations remember.
-          </p>
-          <div className="flex gap-4">
-            <Link to="/collections"
-              className="bg-gold text-darkbg font-bold px-8 py-4 tracking-widest uppercase text-sm hover:bg-gold/90 transition-colors">
-              Explore Collections →
-            </Link>
-            <Link to="/contact"
-              className="border border-gold/30 text-white px-8 py-4 tracking-widest uppercase text-sm hover:border-gold transition-colors">
-              Request Custom Design
-            </Link>
-          </div>
-        </div>
-      </section>
+     {/* Hero Section */}
+<section className="relative min-h-screen flex items-center">
 
-      {/* Categories Section */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <p className="text-gold text-xs tracking-[0.4em] uppercase mb-2">
-          Our Collections
-        </p>
-        <h2 className="text-white text-4xl font-bold mb-12">
-          Browse by Category
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {categories.map(category => (
-            <Link
-              key={category.id}
-              to={`/collections?category=${category.slug}`}
-              className="border border-gold/20 hover:border-gold p-6 text-center transition-colors group">
-              <p className="text-white/70 group-hover:text-gold text-sm tracking-wider uppercase transition-colors">
-                {category.name}
-              </p>
-            </Link>
-          ))}
+  {/* Background Image */}
+  <div className="absolute inset-0 z-0">
+    <img
+      src="http://localhost:5000/uploads/gallery/factory/AA Welcome.jpg"
+      alt="Delta Industries Factory"
+      className="w-full h-full object-cover object-bottom"
+    />
+    <div className="absolute inset-0 bg-black/75" />
+  </div>
+
+  {/* Content */}
+  <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24">
+    <div className="max-w-2xl">
+      <p className="text-gold text-xs tracking-[0.4em] uppercase mb-6">
+        Delta Industries · Est. 1998
+      </p>
+      <h1 className="text-white text-6xl font-bold leading-tight mb-6">
+        Crafting <span className="text-gold">excellence,</span>
+        <br />one trophy at a time.
+      </h1>
+      <p className="text-white/60 text-lg leading-relaxed mb-10">
+        Twenty-seven years of sculpting recognition. From hand-finished
+        walnut bases to optical crystal sculptures — Delta crafts the
+        moments that organisations remember.
+      </p>
+      <div className="flex gap-4 flex-wrap">
+        <Link to="/collections"
+          className="bg-gold text-darkbg font-bold px-8 py-4 tracking-widest uppercase text-sm hover:bg-gold/90 transition-colors">
+          Explore Collections →
+        </Link>
+        <Link to="/contact"
+          className="border border-white/30 text-white px-8 py-4 tracking-widest uppercase text-sm hover:border-gold hover:text-gold transition-colors">
+          Request Custom Design
+        </Link>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+     {/* Categories Section */}
+     <div className="bg-darkbg w-full">
+<section className="bg-darkbg max-w-7xl mx-auto px-6 py-20">
+  <div className="flex items-end justify-between mb-12">
+    <div>
+      <p className="text-gold text-xs tracking-[0.4em] uppercase mb-2">
+        Our Collections
+      </p>
+      <h2 className="text-white text-4xl font-bold">
+        Browse by Category
+      </h2>
+    </div>
+    <Link to="/collections"
+      className="text-gold text-xs tracking-widest uppercase hover:text-gold/70 transition-colors hidden md:block">
+      View All →
+    </Link>
+  </div>
+
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    {categories.map((category, index) => (
+      <Link
+        key={category.id}
+        to={`/collections?category=${category.slug}`}
+        className="group relative overflow-hidden border border-gold/20 hover:border-gold transition-all duration-300">
+
+        {/* Background gradient unique per category */}
+        <div className={`aspect-square flex flex-col items-center justify-center p-6 relative
+          ${index % 5 === 0 ? 'bg-gradient-to-br from-gold/20 to-darkbg' :
+            index % 5 === 1 ? 'bg-gradient-to-br from-white/10 to-darkbg' :
+            index % 5 === 2 ? 'bg-gradient-to-br from-gold/10 to-darkbg' :
+            index % 5 === 3 ? 'bg-gradient-to-br from-white/5 to-darkbg' :
+            'bg-gradient-to-br from-gold/15 to-darkbg'}`}>
+
+          {/* Trophy Icon */}
+          <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+            {index % 5 === 0 ? '🏆' :
+             index % 5 === 1 ? '🥇' :
+             index % 5 === 2 ? '🎖️' :
+             index % 5 === 3 ? '🏅' : '⭐'}
+          </div>
+
+          {/* Category Name */}
+          <p className="text-white/70 group-hover:text-gold text-xs tracking-wider uppercase text-center transition-colors duration-300 font-medium">
+            {category.name}
+          </p>
+
+          {/* Arrow appears on hover */}
+          <p className="text-gold text-xs mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-widest">
+            Explore →
+          </p>
+
+          {/* Corner accent */}
+          <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-gold/30 group-hover:border-gold transition-colors duration-300" />
+          <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-gold/30 group-hover:border-gold transition-colors duration-300" />
+
         </div>
-      </section>
+      </Link>
+    ))}
+  </div>
+</section>
+</div>
 
       {/* Featured Products */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
+      <div className="bg-darkbg w-full">
+      <section className="bg-darkbg max-w-7xl mx-auto px-6 py-20">
         <p className="text-gold text-xs tracking-[0.4em] uppercase mb-2">
           Featured
         </p>
@@ -100,9 +156,10 @@ function Home() {
           </Link>
         </div>
       </section>
+      </div>
 
       {/* Founder Section */}
-      <section className="border-t border-gold/20 py-20">
+      <section className="border-t border-gold/20 py-20 bg-darkbg">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-gold text-xs tracking-[0.4em] uppercase mb-6">
             Our Founder
@@ -120,7 +177,7 @@ function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="border-t border-gold/20 py-20">
+      <section className="border-t border-gold/20 py-20 bg-darkbg">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[

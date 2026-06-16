@@ -8,6 +8,8 @@ const categories = [
   { name: 'metal-cups', dbName: 'Metal Cups' },
   { name: 'iron-cups', dbName: 'Iron Cups' },
   { name: 'fiber-cups', dbName: 'Fiber Cups' },
+  { name: 'wooden-plastic-cups', dbName: 'Wooden and Plastic Wooden Cups' },
+  { name: 'attachments', dbName: 'Wooden and Plastic Wooden Cups' },
 ];
 
 const uploadAll = async () => {
