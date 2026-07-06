@@ -12,6 +12,8 @@ import Distributors from './pages/Distributors';
 import AdminLogin from './pages/admin/Login';
 import Dashboard from './pages/admin/Dashboard';
 import ManageProducts from './pages/admin/ManageProducts';
+import Leads from './pages/admin/Leads';
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
       <LeadPopup />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/admin/leads" element={<Leads />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<Dashboard />} />
         <Route path="/admin/products" element={<ManageProducts />} />

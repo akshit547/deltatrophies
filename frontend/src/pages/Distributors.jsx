@@ -1,57 +1,229 @@
+import { motion } from 'framer-motion';
+
 const distributors = [
   {
     id: 1,
-    name: 'Distributor Name',
-    city: 'City Name',
-    phone: '+91 00000 00000',
-    address: 'Full address here',
+    shopName: 'J-Beez International',
+    contactPerson: 'Jaskaranjit Singh',
+    phones: ['98728-40010', '94653-37714'],
+    email: 'jbitrophies@gmail.com',
+    address: '#129-A, Basti Nau PNB Street',
+    city: 'Jalandhar',
+    state: 'Punjab',
+    image: '/uploads/distributors/jbeez-shop.jpg',
+  },
+  {
+    id: 2,
+    shopName: 'Sharma Sports & Trophies',
+    contactPerson: 'Kashish Sharma',
+    phones: ['90452-23000'],
+    email: null,
+    address: 'DDI Road, Deoband Road',
+    city: 'Muzaffarnagar',
+    state: 'Uttar Pradesh',
+    image: '/uploads/distributors/sharma-sports.jpg',
+  },
+  {
+    id: 3,
+    shopName: 'Trophy Planet',
+    contactPerson: 'Gursimran Singh',
+    phones: ['99888-80158', '98038-48148'],
+    email: 'trophyplanetasr@gmail.com',
+    address: 'Kot Mahna Singh I/S Namdhari Kanda, T.T Road',
+    city: 'Amritsar',
+    state: 'Punjab',
+    image: '/uploads/distributors/trophy-planet.jpg',
+  },
+  {
+    id: 4,
+    shopName: 'Supreme Trophies',
+    contactPerson: 'S. Devinder Pal Singh',
+    phones: ['92177-87756', '92179-80155'],
+    email: 'supremetrophy001@gmail.com',
+    address: '47-D, Industrial Colony, Nr. Pahwa Hospital Road',
+    city: 'Ludhiana',
+    state: 'Punjab',
+    image: '/uploads/distributors/supreme-trophies.jpg',
+  },
+  {
+    id: 5,
+    shopName: 'Sunny Trophies',
+    contactPerson: 'Sunny',
+    phones: [],
+    email: null,
+    address: '',
+    city: 'Delhi',
+    state: 'Delhi',
+    image: '/uploads/distributors/sunny-delhi.jpg',
+  },
+  {
+    id: 6,
+    shopName: 'Bharat Corporation',
+    contactPerson: 'Samriti Mittal',
+    phones: ['78149-59728'],
+    email: null,
+    address: '#05608, Street No. 01-C, Shiv Colony',
+    city: 'Bathinda',
+    state: 'Punjab',
+    image: '/uploads/distributors/bharat-corporation.jpg',
+  },
+  {
+    id: 7,
+    shopName: 'Natraj Industries',
+    contactPerson: '',
+    phones: [],
+    email: null,
+    address: '',
+    city: 'Bathinda',
+    state: 'Punjab',
+    image: '/uploads/distributors/natraj-industries.jpg',
   },
 ];
 
 function Distributors() {
   return (
-    <div className="bg-darkbg min-h-screen pt-24">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+    <div className="bg-darkbg w-full min-h-screen text-white">
+      <div className="max-w-7xl mx-auto px-6 pt-32 pb-20">
 
-        <p className="text-gold text-xs tracking-[0.4em] uppercase mb-2">Find Us Near You</p>
-        <h1 className="text-white text-4xl font-bold mb-4">Distributors</h1>
-        <p className="text-white/50 text-sm mb-12 max-w-xl">
-          Find an authorised Delta Industries distributor near you to purchase
-          our products locally.
-        </p>
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-6">
+          <p className="text-gold text-xs tracking-[0.4em] uppercase mb-2 font-semibold">
+            Find Us Near You
+          </p>
+          <h1 className="text-white text-5xl font-bold mb-4">Our Distributors</h1>
+          <p className="text-white/50 text-sm max-w-xl leading-relaxed">
+            Delta Industries products are available through our trusted network
+            of distributors across India. Find your nearest distributor below.
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {distributors.map(d => (
-            <div key={d.id}
-              className="border border-gold/20 hover:border-gold p-6 transition-colors">
-              <p className="text-gold text-xs tracking-widest uppercase mb-3">
-                {d.city}
-              </p>
-              <h3 className="text-white text-lg font-bold mb-4">{d.name}</h3>
-              <p className="text-white/50 text-sm mb-2">{d.address}</p>
-              <a href={`tel:${d.phone}`}
-                className="text-gold text-sm hover:text-gold/70 transition-colors">
-                {d.phone}
-              </a>
+        {/* Stats Bar */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="flex gap-8 border-y border-gold/20 py-6 mb-16">
+          {[
+            { number: '7+', label: 'Authorised Distributors' },
+            { number: '6+', label: 'Cities Covered' },
+            { number: '4+', label: 'States' },
+          ].map((stat, i) => (
+            <div key={i}>
+              <p className="text-gold text-2xl font-bold">{stat.number}</p>
+              <p className="text-white/40 text-xs tracking-wider uppercase">{stat.label}</p>
             </div>
+          ))}
+        </motion.div>
+
+        {/* Distributors Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+          {distributors.map((dist, index) => (
+            <motion.div
+              key={dist.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08, duration: 0.5 }}
+              className="group border border-white/[0.06] hover:border-gold/40 transition-all duration-300 overflow-hidden bg-gradient-to-b from-white/[0.02] to-transparent">
+
+              {/* Shop Image */}
+              <div className="relative h-64 overflow-hidden bg-white/5">
+                <img
+                  src={`http://localhost:5000${dist.image}`}
+                  alt={dist.shopName}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-3 right-3 bg-darkbg/80 backdrop-blur-sm border border-gold/30 px-3 py-1">
+                  <p className="text-gold text-xs tracking-wider uppercase font-semibold">
+                    {dist.city}
+                  </p>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="text-white text-lg font-bold mb-1 group-hover:text-gold transition-colors duration-300">
+                  {dist.shopName}
+                </h3>
+
+                {dist.contactPerson && (
+                  <p className="text-white/40 text-xs tracking-wider mb-4">
+                    {dist.contactPerson}
+                  </p>
+                )}
+
+                <div className="flex flex-col gap-2 mb-4">
+                  {dist.address && (
+                    <div className="flex gap-2 items-start">
+                      <span className="text-gold text-xs mt-0.5">📍</span>
+                      <p className="text-white/50 text-xs leading-relaxed">
+                        {dist.address}, {dist.city}, {dist.state}
+                      </p>
+                    </div>
+                  )}
+
+                  {dist.phones.map((phone, i) => (
+                    <div key={i} className="flex gap-2 items-center">
+                      <span className="text-gold text-xs">📞</span>
+                      <a
+                        href={`tel:+91${phone.replace(/-/g, '')}`}
+                        className="text-white/50 hover:text-gold text-xs transition-colors">
+                        {phone}
+                      </a>
+                    </div>
+                  ))}
+
+                  {dist.email && (
+                    <div className="flex gap-2 items-center">
+                      <span className="text-gold text-xs">✉️</span>
+                      <a
+                        href={`mailto:${dist.email}`}
+                        className="text-white/50 hover:text-gold text-xs transition-colors truncate">
+                        {dist.email}
+                      </a>
+                    </div>
+                  )}
+                </div>
+
+                {dist.phones.length > 0 && (
+                  <a
+                    href={`tel:+91${dist.phones[0].replace(/-/g, '')}`}
+                    className="inline-flex items-center gap-2 border border-gold/30 text-gold text-xs tracking-widest uppercase px-4 py-2 hover:bg-gold hover:text-darkbg transition-all duration-300 w-full justify-center mt-2">
+                    Call Now
+                  </a>
+                )}
+
+              </div>
+            </motion.div>
           ))}
         </div>
 
-        <div className="border border-gold/20 p-8 mt-16 text-center">
-          <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">
-            Become a Distributor
+        {/* Become a Distributor CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="border border-gold/20 p-10 text-center bg-gradient-to-b from-gold/5 to-transparent">
+          <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3 font-semibold">
+            Grow With Us
           </p>
-          <h2 className="text-white text-2xl font-bold mb-4">
-            Interested in partnering with us?
+          <h2 className="text-white text-3xl font-bold mb-4">
+            Become an Authorised Distributor
           </h2>
-          <p className="text-white/50 text-sm mb-6">
-            Contact us to learn about our distributor program.
+          <p className="text-white/50 text-sm mb-8 max-w-md mx-auto leading-relaxed">
+            Interested in partnering with Delta Industries? Join our trusted
+            network and bring premium trophies to your city.
           </p>
-          <a href="tel:+910000000000"
-            className="bg-gold text-darkbg font-bold px-8 py-3 tracking-widest uppercase text-sm hover:bg-gold/90 transition-colors inline-block">
-            Contact Us
+          <a
+            href="tel:+910000000000"
+            className="inline-block bg-gold text-darkbg font-bold px-10 py-4 tracking-widest uppercase text-xs hover:bg-gold/90 transition-colors">
+            Contact Us Today
           </a>
-        </div>
+        </motion.div>
 
       </div>
     </div>
