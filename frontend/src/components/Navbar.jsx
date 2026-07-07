@@ -40,7 +40,7 @@ function Navbar() {
 
         <a href="tel:+910000000000"
           className="hidden md:flex items-center gap-2 text-gold text-sm tracking-wider">
-          +91 000 000 0000
+          +91 92165 77789
         </a>
 
         <button

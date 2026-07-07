@@ -78,6 +78,17 @@ const distributors = [
     state: 'Punjab',
     image: '/uploads/distributors/natraj-industries.jpg',
   },
+  {
+    id: 8,
+    shopName: 'Ganpati Trophies',
+    contactPerson: 'Ganpati',
+    phones: [],
+    email: null,
+    address: '',
+    city: 'Ganganagar',
+    state: 'Rajasthan',
+    image: '/uploads/distributors/Ganpati-dealer.jpg',
+  },
 ];
 
 function Distributors() {
@@ -108,7 +119,7 @@ function Distributors() {
           transition={{ delay: 0.3 }}
           className="flex gap-8 border-y border-gold/20 py-6 mb-16">
           {[
-            { number: '7+', label: 'Authorised Distributors' },
+            { number: '8+', label: 'Authorised Distributors' },
             { number: '6+', label: 'Cities Covered' },
             { number: '4+', label: 'States' },
           ].map((stat, i) => (

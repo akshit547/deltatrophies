@@ -33,10 +33,10 @@ function Footer() {
             <h3 className="text-gold text-sm tracking-widest uppercase mb-4">Contact Us</h3>
             <div className="flex flex-col gap-2">
               <a href="tel:+910000000000" className="text-white/50 hover:text-gold text-sm transition-colors">
-                +91 000 000 0000
+                +91 92165 77789
               </a>
               <a href="mailto:info@deltatrophies.com" className="text-white/50 hover:text-gold text-sm transition-colors">
-                info@deltatrophies.com
+                gsbedi_99@yahoo.com
               </a>
               <p className="text-white/50 text-sm">Jalandhar, Punjab, India</p>
             </div>
