@@ -10,7 +10,7 @@ const factoryImages = [
   '/uploads/gallery/factory/AA Welcome.jpg',
 ];
 
-const tabs = ['Factory', 'Events', 'Products'];
+const tabs = ['Factory', 'Events', 'Videos'];
 
 function Gallery() {
   const [activeTab, setActiveTab] = useState('Factory');
