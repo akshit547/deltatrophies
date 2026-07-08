@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import API from '../api/axios';
 import ProductCard from '../components/ProductCard';
+import getImageUrl from '../utils/getImageUrl';
 
 function Home() {
   const [categories, setCategories] = useState([]);
@@ -35,7 +36,7 @@ function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="http://localhost:5000/uploads/gallery/factory/AA Welcome.jpg"
+            src={getImageUrl('/uploads/gallery/factory/AA Welcome.jpg')}
             alt="Delta Industries Factory"
             className="w-full h-full object-cover object-bottom filter brightness-[0.4] contrast-[1.05]"
           />
@@ -119,7 +120,7 @@ function Home() {
 
                 {/* Real trophy image */}
                 <img
-                  src="http://localhost:5000/uploads/delta-catalogue/metal-cups/MC_5052.png"
+                  src={getImageUrl('/uploads/delta-catalogue/metal-cups/MC_5052.png')}
                   alt="Featured Trophy"
                   className="relative z-10 w-80 h-96 object-contain drop-shadow-2xl"
                 />
@@ -299,7 +300,7 @@ function Home() {
                   <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-gold to-amber-300 p-[1px] shadow-xl shadow-gold/10">
                     <div className="w-full h-full rounded-full overflow-hidden">
                       <img
-                        src={`http://localhost:5000${founder.image}`}
+                        src={getImageUrl(founder.image)}
                         alt={founder.name}
                         className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       />

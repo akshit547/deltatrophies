@@ -144,7 +144,7 @@ function Distributors() {
               {/* Shop Image */}
               <div className="relative h-64 overflow-hidden bg-white/5">
                 <img
-                  src={`http://localhost:5000${dist.image}`}
+                  src={getImageUrl(dist.image)}
                   alt={dist.shopName}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />

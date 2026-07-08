@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import API from '../api/axios';
+import getImageUrl from '../utils/getImageUrl';
 
 function ProductDetail() {
   const { id } = useParams();
@@ -71,7 +72,7 @@ function ProductDetail() {
             <div className="bg-white/5 border border-gold/20 aspect-square flex items-center justify-center mb-4">
               {product.images && product.images.length > 0 ? (
                 <img
-                  src={product.images[selectedImage]}
+                  src={getImageUrl(product.images[selectedImage])}
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />
@@ -93,7 +94,7 @@ function ProductDetail() {
                         : 'border-gold/20 hover:border-gold/50'
                     }`}>
                     <img
-                      src={img}
+                      src={getImageUrl(img)}
                       alt={`${product.name} ${index + 1}`}
                       className="w-full h-full object-cover"
                     />

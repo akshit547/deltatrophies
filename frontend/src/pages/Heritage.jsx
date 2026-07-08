@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import getImageUrl from '../utils/getImageUrl';
+
 
 const founders = [
   {
@@ -51,7 +53,7 @@ function Heritage() {
                   <div className="absolute -inset-2 border border-gold/20" />
                   <div className="absolute -inset-4 border border-gold/10" />
                   <img
-                    src={`http://localhost:5000${founder.image}`}
+                    src={getImageUrl(founder.image  )}
                     alt={founder.name}
                     className="w-full aspect-square object-cover object-top relative z-10"
                   />

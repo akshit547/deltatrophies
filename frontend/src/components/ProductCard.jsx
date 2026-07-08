@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import getImageUrl from '../utils/getImageUrl';
 
 function ProductCard({ product }) {
   return (
@@ -9,7 +10,7 @@ function ProductCard({ product }) {
         style={{height: '280px'}}>
         {product.images && product.images[0] ? (
           <img
-            src={`http://localhost:5000${product.images[0]}`}
+            src={getImageUrl(product.images[0])}
             alt={product.name}
             className="w-full h-full object-contain p-4"
           />

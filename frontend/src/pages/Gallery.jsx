@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import getImageUrl from '../utils/getImageUrl';
 
 const factoryImages = [
   '/uploads/gallery/factory/Video Short 1.jpg',
@@ -49,7 +50,7 @@ function Gallery() {
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center px-4"
           onClick={() => setSelectedImage(null)}>
           <img
-            src={`http://localhost:5000${selectedImage}`}
+            src={getImageUrl(selectedImage)}
             alt="Gallery"
             className="max-w-4xl max-h-screen object-contain"
           />
@@ -102,7 +103,7 @@ function Gallery() {
                 onClick={() => setSelectedImage(img)}
                 className="break-inside-avoid cursor-pointer group relative overflow-hidden border border-gold/10 hover:border-gold transition-colors">
                 <img
-                  src={`http://localhost:5000${img}`}
+                  src={getImageUrl(img)}
                   alt={`Factory ${index + 1}`}
                   className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
