@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import getImageUrl from '../utils/getImageUrl';
+import { Helmet } from 'react-helmet-async';
 
 const distributors = [
   {
@@ -14,17 +16,6 @@ const distributors = [
   },
   {
     id: 2,
-    shopName: 'Sharma Sports & Trophies',
-    contactPerson: 'Kashish Sharma',
-    phones: ['90452-23000'],
-    email: null,
-    address: 'DDI Road, Deoband Road',
-    city: 'Muzaffarnagar',
-    state: 'Uttar Pradesh',
-    image: '/uploads/distributors/sharma-sports.jpg',
-  },
-  {
-    id: 3,
     shopName: 'Trophy Planet',
     contactPerson: 'Gursimran Singh',
     phones: ['99888-80158', '98038-48148'],
@@ -35,7 +26,7 @@ const distributors = [
     image: '/uploads/distributors/trophy-planet.jpg',
   },
   {
-    id: 4,
+    id: 3,
     shopName: 'Supreme Trophies',
     contactPerson: 'S. Devinder Pal Singh',
     phones: ['92177-87756', '92179-80155'],
@@ -46,54 +37,58 @@ const distributors = [
     image: '/uploads/distributors/supreme-trophies.jpg',
   },
   {
-    id: 5,
-    shopName: 'Sunny Trophies',
-    contactPerson: 'Sunny',
-    phones: [],
+    id: 4,
+    shopName: 'Sharma Sports & Trophies',
+    contactPerson: 'Kashish Sharma',
+    phones: ['90452-23000'],
     email: null,
-    address: '',
-    city: 'Delhi',
-    state: 'Delhi',
-    image: '/uploads/distributors/sunny-delhi.jpg',
+    address: 'DDI Road, Deoband Road',
+    city: 'Muzaffarnagar',
+    state: 'Uttar Pradesh',
+    image: '/uploads/distributors/sharma-sports.jpg',
   },
   {
-    id: 6,
-    shopName: 'Bharat Corporation',
-    contactPerson: 'Samriti Mittal',
-    phones: ['78149-59728'],
-    email: null,
-    address: '#05608, Street No. 01-C, Shiv Colony',
-    city: 'Bathinda',
-    state: 'Punjab',
-    image: '/uploads/distributors/bharat-corporation.jpg',
-  },
+  id: 5,
+  shopName: 'Sunny Trophies',
+  contactPerson: 'Sunny',
+  phones: ['97115 55486'],
+  email: null,
+  address: 'JG-2, Ground Floor, Flat No. 568, Vikas Puri',
+  city: 'New Delhi',
+  state: 'Delhi',
+  image: '/uploads/distributors/sunny-delhi.jpg',
+},
   {
-    id: 7,
-    shopName: 'Natraj Industries',
-    contactPerson: '',
-    phones: [],
-    email: null,
-    address: '',
-    city: 'Bathinda',
-    state: 'Punjab',
-    image: '/uploads/distributors/natraj-industries.jpg',
-  },
+  id: 7,
+  shopName: 'Natraj Industries',
+  contactPerson: '',
+  phones: ['9855277805'], 
+  email: null,
+  address: 'Street No. 6, Malviya Nagar',
+  city: 'Bathinda',
+  state: 'Punjab',
+  image: '/uploads/distributors/natraj-industries.jpg',
+},
   {
-    id: 8,
-    shopName: 'Ganpati Trophies',
-    contactPerson: 'Ganpati',
-    phones: [],
-    email: null,
-    address: '',
-    city: 'Ganganagar',
-    state: 'Rajasthan',
-    image: '/uploads/distributors/Ganpati-dealer.jpg',
-  },
+  id: 8,
+  shopName: 'Shri Ganpati Arts',
+  contactPerson: 'Ganpati',
+  phones: ['95300-58280'],
+  email: null,
+  address: 'House No. 443, Gali No. 02, Indra Colony',
+  city: 'Sri Ganganagar',
+  state: 'Rajasthan',
+  image: '/uploads/distributors/Ganpati-dealer.jpg',
+},
 ];
 
 function Distributors() {
   return (
     <div className="bg-darkbg w-full min-h-screen text-white">
+      <Helmet>
+  <title>Distributors — Delta Industries | Find Trophy Dealers Near You</title>
+  <meta name="description" content="Find authorised Delta Industries trophy distributors across India. dealers in Jalandhar, Amritsar, Ludhiana, Delhi, Bathinda, Muzaffarnagar and Sri Ganganagar." />
+</Helmet>
       <div className="max-w-7xl mx-auto px-6 pt-32 pb-20">
 
         {/* Header */}
@@ -119,8 +114,8 @@ function Distributors() {
           transition={{ delay: 0.3 }}
           className="flex gap-8 border-y border-gold/20 py-6 mb-16">
           {[
-            { number: '8+', label: 'Authorised Distributors' },
-            { number: '6+', label: 'Cities Covered' },
+            { number: '7+', label: 'Authorised Distributors' },
+            { number: '7+', label: 'Cities Covered' },
             { number: '4+', label: 'States' },
           ].map((stat, i) => (
             <div key={i}>

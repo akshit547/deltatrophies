@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import API from '../api/axios';
 import ProductCard from '../components/ProductCard';
 import FilterSidebar from '../components/FilterSidebar';
+import { Helmet } from 'react-helmet-async';
 
 function Shop() {
   const [products, setProducts] = useState([]);
@@ -55,6 +56,10 @@ function Shop() {
 
   return (
     <div className="bg-darkbg min-h-screen pt-24">
+      <Helmet>
+  <title>Trophy Collections — Delta Industries Jalandhar | 259+ Designs</title>
+  <meta name="description" content="Browse 259+ premium trophy designs including plastic cups, metal cups, fiber cups, iron cups and wooden trophies. Custom awards for sports, corporate events and schools. Delta Industries, Jalandhar." />
+</Helmet>
       <div className="max-w-7xl mx-auto px-6 py-12">
 
         {/* Header */}

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import API from '../api/axios';
 import getImageUrl from '../utils/getImageUrl';
+import { Helmet } from 'react-helmet-async';
 
 function ProductDetail() {
   const { id } = useParams();
@@ -54,6 +55,11 @@ function ProductDetail() {
 
   return (
     <div className="bg-darkbg min-h-screen pt-24">
+      <Helmet>
+  <title>{product.name} | Delta Industries Jalandhar</title>
+  <meta name="description" content={product.description} />
+  <meta name="keywords" content={`trophy, award, ${product.category_name}, custom trophy, ${product.name}, Delta Industries Jalandhar`} />
+</Helmet>
       <div className="max-w-7xl mx-auto px-6 py-12">
 
         {/* Breadcrumb */}
@@ -69,26 +75,29 @@ function ProductDetail() {
 
           {/* Images */}
           <div>
-            <div className="bg-white/5 border border-gold/20 aspect-square flex items-center justify-center mb-4">
-              {product.images && product.images.length > 0 ? (
-                <img
-                  src={getImageUrl(product.images[selectedImage])}
-                  alt={product.name}
-                  className="w-full h-full object-cover"
-                />
+            {/* Main Image */}
+            <div
+  className="bg-white border border-gold/20 flex items-center justify-center mb-4"
+  style={{ height: '600px' }}>
+  {product.images && product.images.length > 0 ? (
+    <img
+      src={getImageUrl(product.images[selectedImage])}
+      alt={product.name}
+      style={{ maxHeight: '600px', maxWidth: '100%', objectFit: 'contain', padding: '16px' }}
+    />
               ) : (
-                <p className="text-white/20 text-sm">No Image Available</p>
+                <p className="text-darkbg/30 text-sm">No Image Available</p>
               )}
             </div>
 
             {/* Thumbnail Images */}
             {product.images && product.images.length > 1 && (
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap">
                 {product.images.map((img, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImage(index)}
-                    className={`w-16 h-16 border ${
+                    className={`w-16 h-16 border bg-white overflow-hidden ${
                       selectedImage === index
                         ? 'border-gold'
                         : 'border-gold/20 hover:border-gold/50'
@@ -96,7 +105,7 @@ function ProductDetail() {
                     <img
                       src={getImageUrl(img)}
                       alt={`${product.name} ${index + 1}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain p-1"
                     />
                   </button>
                 ))}
@@ -189,6 +198,7 @@ function ProductDetail() {
           </div>
         </div>
       </div>
+      
     </div>
   );
 }

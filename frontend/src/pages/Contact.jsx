@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import API from '../api/axios';
-
+import { Helmet } from 'react-helmet-async';
 const salesTeam = [
   { name: 'Komal', phone: '92165-77789' },
   { name: 'Navneet', phone: '87596-66665' },
@@ -28,6 +28,10 @@ function Contact() {
 
   return (
     <div className="bg-darkbg w-full min-h-screen text-white">
+      <Helmet>
+  <title>Contact Us — Delta Industries Jalandhar | Trophy Manufacturer</title>
+  <meta name="description" content="Contact Delta Industries for custom trophy orders, bulk enquiries and dealership. Trophy manufacturer in Jalandhar, Punjab. Call +91 92165 77789." />
+</Helmet>
       <div className="max-w-7xl mx-auto px-6 pt-32 pb-20">
 
         {/* Header */}

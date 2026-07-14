@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import API from '../api/axios';
 import ProductCard from '../components/ProductCard';
 import getImageUrl from '../utils/getImageUrl';
+import { Helmet } from 'react-helmet-async';
 
 function Home() {
   const [categories, setCategories] = useState([]);
@@ -25,7 +26,11 @@ function Home() {
 
   return (
     <div className="bg-darkbg w-full min-h-screen text-white font-sans overflow-x-hidden selection:bg-gold/30 selection:text-white">
-
+      <Helmet>
+  <title>Delta Industries — Premium Trophy Manufacturer Jalandhar | Custom Awards & Trophies</title>
+  <meta name="description" content="Delta Industries — Punjab's leading trophy manufacturer since 1998. Premium custom trophies, awards, mementos, crystal trophies, metal cups, wooden trophies for corporate events, sports and schools. Jalandhar, Punjab." />
+  <meta name="keywords" content="trophy manufacturer jalandhar, custom trophy india, sports trophy, corporate award, metal trophy, crystal trophy, wooden trophy, award manufacturer punjab, bulk trophy supplier" />
+</Helmet>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-start overflow-hidden">
 
@@ -67,7 +72,7 @@ function Home() {
                 initial={{ opacity: 0, letterSpacing: "0.2em" }}
                 animate={{ opacity: 1, letterSpacing: "0.4em" }}
                 transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-gold text-xs font-semibold uppercase mb-6 inline-block bg-gold/10 px-4 py-1.5 rounded-full border border-gold/20 backdrop-blur-sm">
+                className="text-yellow-400 text-xs font-semibold uppercase mb-6 inline-block bg-gold/10 px-4 py-1.5 rounded-full border border-gold/20 backdrop-blur-sm">
                 Delta Industries · Est. 1998
               </motion.p>
 
@@ -75,9 +80,9 @@ function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-white text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6 font-serif">
-                Crafting <span className="text-gold italic font-normal">excellence,</span>
-                <br />one trophy at a time.
+                className="text-white text-2xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-6 font-serif">
+                Crafting <span className="text-yellow-400 italic font-normal">excellence,</span>
+                <br />Honouring achievements
               </motion.h1>
 
               <motion.p
@@ -96,7 +101,7 @@ function Home() {
                 transition={{ delay: 0.8, duration: 0.6 }}
                 className="flex gap-4 flex-wrap">
                 <Link to="/collections"
-                  className="group relative bg-gold text-darkbg font-bold px-8 py-4 tracking-widest uppercase text-xs transition-all duration-300 shadow-xl shadow-gold/10 hover:shadow-gold/20 hover:-translate-y-0.5">
+                  className="group relative bg-yellow-400 text-darkbg font-bold px-8 py-4 tracking-widest uppercase text-xs transition-all duration-300 shadow-xl shadow-gold/10 hover:shadow-gold/20 hover:-translate-y-0.5">
                   Explore Collections →
                 </Link>
                 <Link to="/contact"
@@ -106,42 +111,6 @@ function Home() {
               </motion.div>
 
             </motion.div>
-
-            {/* Right Side — Real Trophy Image */}
-            <div className="lg:col-span-5 hidden lg:flex justify-center items-center relative h-[550px]">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5, duration: 1 }}
-                className="relative">
-
-                {/* Glow behind trophy */}
-                <div className="absolute inset-0 bg-gold/20 blur-[60px] rounded-full" />
-
-                {/* Real trophy image */}
-                <img
-                  src={getImageUrl('/uploads/delta-catalogue/metal-cups/MC_5052.png')}
-                  alt="Featured Trophy"
-                  className="relative z-10 w-80 h-96 object-contain drop-shadow-2xl"
-                />
-
-                {/* Sparkles */}
-                <motion.div
-                  animate={{ y: [0, -25, 0], x: [0, 10, 0], opacity: [0, 1, 0] }}
-                  transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                  className="absolute top-12 right-4 text-gold text-lg select-none">
-                  ✦
-                </motion.div>
-                <motion.div
-                  animate={{ y: [0, -35, 0], x: [0, -15, 0], opacity: [0, 0.7, 0] }}
-                  transition={{ repeat: Infinity, duration: 5, delay: 1.5, ease: "easeInOut" }}
-                  className="absolute bottom-24 left-2 text-white text-xs select-none">
-                  ✦
-                </motion.div>
-
-              </motion.div>
-            </div>
-
           </div>
         </div>
 
@@ -277,13 +246,13 @@ function Home() {
               {
                 name: 'Gurdeep Singh',
                 role: 'Founder',
-                image: '/uploads/founders/founder-male.jpg',
+                image: '/uploads/founders/founder_male_1.jpeg',
                 slogan: 'Excellence is not a destination — it is the standard we set every single day.'
               },
               {
                 name: 'Satwinder Kaur Bedi',
                 role: 'Co-Founder',
-                image: '/uploads/founders/founder-female.jpg',
+                image: '/uploads/founders/founder_femlae_1.jpeg',
                 slogan: 'Behind every trophy is a story of perseverance — we are here to tell that story.'
               }
             ].map((founder, index) => (
@@ -354,7 +323,7 @@ function Home() {
           </div>
         </div>
       </section>
-
+              
     </div>
   );
 }

@@ -1,19 +1,20 @@
 import { motion } from 'framer-motion';
 import getImageUrl from '../utils/getImageUrl';
+import { Helmet } from 'react-helmet-async';
 
 
 const founders = [
   {
     name: 'Gurdeep Singh',
     role: 'Founder',
-    image: '/uploads/founders/founder-male.jpg',
+    image: '/uploads/founders/founder_male_1.jpeg',
     slogan: 'Excellence is not a destination — it is the standard we set every single day.',
     bio: "With over 27 years of vision and dedication, Gurdeep Singh built Delta Industries from the ground up, transforming a simple dream into one of Punjab's most trusted trophy manufacturing companies."
   },
   {
     name: 'Satwinder Kaur Bedi',
     role: 'Co-Founder',
-    image: '/uploads/founders/founder-female.jpg',
+    image: '/uploads/founders/founder_femlae_1.jpeg',
     slogan: 'Behind every trophy is a story of perseverance — we are here to tell that story.',
     bio: "A pillar of strength behind Delta Industries, she has been instrumental in shaping the company's values, customer relationships, and the warmth that every client experiences."
   }
@@ -22,6 +23,10 @@ const founders = [
 function Heritage() {
   return (
     <div className="bg-darkbg w-full min-h-screen text-white">
+      <Helmet>
+  <title>Our Heritage — Delta Industries | Trophy Manufacturer Since 1998</title>
+  <meta name="description" content="Delta Industries was founded in 1998 by Gurdeep Singh in Jalandhar, Punjab. 27 years of crafting premium trophies and awards across India." />
+</Helmet>
       <div className="max-w-7xl mx-auto px-6 pt-32 pb-20">
 
         {/* Header */}
@@ -96,11 +101,11 @@ function Heritage() {
           <div className="flex flex-col gap-8 max-w-2xl mx-auto">
             {[
               { year: '1998', text: 'Delta Industries founded in Jalandhar, Punjab by Gurdeep Singh' },
-              { year: '2005', text: 'Expanded product range to include crystal and acrylic trophies' },
-              { year: '2010', text: 'Reached milestone of 1,000+ satisfied clients across North India' },
-              { year: '2015', text: 'Expanded distribution network to 20+ cities across India' },
-              { year: '2020', text: 'Launched new product lines including fiber and wooden trophies' },
-              { year: '2024', text: 'Serving 20+ cities with 500+ unique designs and 259 catalogue products' },
+              { year: '2000', text: 'Launched new product lines including acrylic trophies' },
+              { year: '2005', text: 'Started importing different designs of trophies of different materials from another countries' },
+              { year: '2008', text: 'Initated manufacturing of plastic trophies' },
+              { year: '2020', text: 'New factory was set up to launch new product lines including fiber and wooden trophies' },
+              { year: '2024', text: 'Serving all 29 states with 500+ unique designs and 259 catalogue products' },
             ].map((item, index) => (
               <motion.div
                 key={index}

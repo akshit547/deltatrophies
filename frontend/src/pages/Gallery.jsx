@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import getImageUrl from '../utils/getImageUrl';
+import { Helmet } from 'react-helmet-async';
 
 const factoryImages = [
   '/uploads/gallery/factory/Video Short 1.jpg',
@@ -43,7 +44,10 @@ function Gallery() {
 
   return (
     <div className="bg-darkbg w-full min-h-screen text-white">
-
+      <Helmet>
+  <title>Gallery — Delta Industries | Trophy Factory & Events</title>
+  <meta name="description" content="View Delta Industries factory, events and trophy collection gallery. Premium trophy manufacturer in Jalandhar, Punjab since 1998." />
+</Helmet>
       {/* Lightbox */}
       {selectedImage && (
         <div
