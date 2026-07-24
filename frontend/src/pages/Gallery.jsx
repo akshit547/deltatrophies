@@ -12,6 +12,24 @@ const factoryImages = [
   '/uploads/gallery/factory/Video Short 6.jpg',
   '/uploads/gallery/factory/AA Welcome.jpg',
 ];
+const annualMeetImages = [
+  '/uploads/gallery/events/annual-meet/0E1A9266.JPG',
+  '/uploads/gallery/events/annual-meet/0E1A9286.JPG',
+  '/uploads/gallery/events/annual-meet/0E1A9343.JPG',
+  '/uploads/gallery/events/annual-meet/0E1A9346.JPG',
+  '/uploads/gallery/events/annual-meet/0E1A9459.JPG',
+  '/uploads/gallery/events/annual-meet/0E1A9597.JPG',
+  '/uploads/gallery/events/annual-meet/0E1A9599.JPG',
+];
+
+const exhibitionImages = [
+  '/uploads/gallery/events/exhibition/DSC_7678.JPG',
+  '/uploads/gallery/events/exhibition/DSC_7728.JPG',
+  '/uploads/gallery/events/exhibition/DSC_7758.JPG',
+  '/uploads/gallery/events/exhibition/DSC_7859.JPG',
+  '/uploads/gallery/events/exhibition/DSC_7880.JPG',
+  '/uploads/gallery/events/exhibition/IMG-20250325-WA0006.jpg',
+];
 
 const videos = [
   {
@@ -35,8 +53,7 @@ const videos = [
     title: 'Delta Industries — Collection showcase'
   },
 ];
-
-const tabs = ['Factory', 'Events', 'Videos'];
+const tabs = ['Factory', 'Annual Meet', 'Exhibition', 'Videos'];
 
 function Gallery() {
   const [activeTab, setActiveTab] = useState('Factory');
@@ -121,21 +138,59 @@ function Gallery() {
           </motion.div>
         )}
 
-        {/* Events Tab */}
-        {activeTab === 'Events' && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4 }}
-            className="flex items-center justify-center py-20 border border-white/[0.06]">
-            <div className="text-center">
-              <p className="text-gold text-3xl mb-4">📸</p>
-              <p className="text-white/30 text-sm tracking-wider uppercase">
-                Event photos coming soon
-              </p>
-            </div>
-          </motion.div>
-        )}
+        {/* Annual Meet Tab */}
+{activeTab === 'Annual Meet' && (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.4 }}
+    className="columns-2 md:columns-4 lg:grid-cols-4 gap-4 space-y-4">
+    {annualMeetImages.map((img, index) => (
+      <div
+        key={index}
+        onClick={() => setSelectedImage(img)}
+        className="break-inside-avoid cursor-pointer group relative overflow-hidden border border-gold/10 hover:border-gold transition-colors">
+        <img
+          src={getImageUrl(img)}
+          alt={`Annual Meet ${index + 1}`}
+          className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+          <p className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-xs tracking-widest uppercase">
+            View
+          </p>
+        </div>
+      </div>
+    ))}
+  </motion.div>
+)}
+
+{/* Exhibition Tab */}
+{activeTab === 'Exhibition' && (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.4 }}
+    className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+    {exhibitionImages.map((img, index) => (
+      <div
+        key={index}
+        onClick={() => setSelectedImage(img)}
+        className="break-inside-avoid cursor-pointer group relative overflow-hidden border border-gold/10 hover:border-gold transition-colors">
+        <img
+          src={getImageUrl(img)}
+          alt={`Exhibition ${index + 1}`}
+          className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+          <p className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-xs tracking-widest uppercase">
+            View
+          </p>
+        </div>
+      </div>
+    ))}
+  </motion.div>
+)}
 
         {/* Videos Tab */}
         {activeTab === 'Videos' && (

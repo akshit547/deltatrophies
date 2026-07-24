@@ -80,7 +80,7 @@ function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-white text-2xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-6 font-serif">
+                className="text-white text-5xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-6 font-serif">
                 Crafting <span className="text-yellow-400 italic font-normal">excellence,</span>
                 <br />Honouring achievements
               </motion.h1>
