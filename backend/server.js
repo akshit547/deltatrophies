@@ -39,6 +39,15 @@ app.use('/api/inquiries/lead', leadLimiter);
 app.get('/', (req, res) => {
   res.json({ message: 'Delta Trophies API Running' });
 });
+// Keep server alive - prevent Render free tier sleep
+if (process.env.NODE_ENV === 'production') {
+  const https = require('https');
+  setInterval(() => {
+    https.get(`https://deltatrophies-backend.onrender.com`, (res) => {
+      console.log('Keep alive ping sent');
+    }).on('error', () => {});
+  }, 14 * 60 * 1000);
+}
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
