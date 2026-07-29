@@ -12,7 +12,7 @@ const founders = [
     bio: "With over 27 years of vision and dedication, Gurdeep Singh built Delta Industries from the ground up, transforming a simple dream into one of Punjab's most trusted trophy manufacturing companies."
   },
   {
-    name: 'XYZ',
+    name: 'Satwinder Kaur Bedi',
     role: 'Co-Founder',
     image: 'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130559/deltatrophies/founders/founder-female.jpg',
     slogan: 'Behind every trophy is a story of perseverance — we are here to tell that story.',

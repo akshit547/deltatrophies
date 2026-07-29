@@ -250,7 +250,7 @@ function Home() {
               slogan: 'Excellence is not a destination — it is the standard we set every single day.'
             },
             {
-              name: 'XYZ',
+              name: 'Satwinder Kaur Bedi',
               role: 'Co-Founder',
               image: 'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130559/deltatrophies/founders/founder-female.jpg',
               slogan: 'Behind every trophy is a story of perseverance — we are here to tell that story.'
