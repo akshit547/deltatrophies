@@ -7,14 +7,14 @@ const founders = [
   {
     name: 'Gurdeep Singh',
     role: 'Founder',
-    image: 'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130561/deltatrophies/founders/founder-male_1.jpeg',
+    image: 'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130568/deltatrophies/founders/founder_male_1.jpg',
     slogan: 'Excellence is not a destination — it is the standard we set every single day.',
     bio: "With over 27 years of vision and dedication, Gurdeep Singh built Delta Industries from the ground up, transforming a simple dream into one of Punjab's most trusted trophy manufacturing companies."
   },
   {
     name: 'Satwinder Kaur Bedi',
     role: 'Co-Founder',
-    image: 'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130559/deltatrophies/founders/founder-femlae_1.jpeg',
+    image: 'https://res.cloudinary.com/aunwcpnr/image/upload/v1785314242/deltatrophies/founders/founder_female_1.jpg',
     slogan: 'Behind every trophy is a story of perseverance — we are here to tell that story.',
     bio: "A pillar of strength behind Delta Industries, she has been instrumental in shaping the company's values, customer relationships, and the warmth that every client experiences."
   }

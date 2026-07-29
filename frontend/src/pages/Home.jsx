@@ -246,13 +246,13 @@ function Home() {
               {
               name: 'Gurdeep Singh',
               role: 'Founder',
-              image: 'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130561/deltatrophies/founders/founder-male_1.jpeg',
+              image: 'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130568/deltatrophies/founders/founder_male_1.jpg',
               slogan: 'Excellence is not a destination — it is the standard we set every single day.'
             },
             {
               name: 'Satwinder Kaur Bedi',
               role: 'Co-Founder',
-              image: 'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130559/deltatrophies/founders/founder-femlae_1.jpeg',
+              image: 'https://res.cloudinary.com/aunwcpnr/image/upload/v1785314242/deltatrophies/founders/founder_female_1.jpg',
               slogan: 'Behind every trophy is a story of perseverance — we are here to tell that story.'
             }
             ].map((founder, index) => (

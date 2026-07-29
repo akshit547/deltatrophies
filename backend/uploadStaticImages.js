@@ -39,16 +39,12 @@ const uploadFolder = async (localPath, cloudinaryFolder) => {
     console.log(`⚠ Folder not found: ${fullPath}`);
     return {};
   }
+
   const files = fs.readdirSync(fullPath).filter(file =>
-    ['.jpeg'].includes(
+    ['.jpg', '.jpeg', '.png', '.webp'].includes(
       path.extname(file).toLowerCase()
     )
   );
-  // const files = fs.readdirSync(fullPath).filter(file =>
-  //   ['.jpg', '.jpeg', '.png', '.webp'].includes(
-  //     path.extname(file).toLowerCase()
-  //   )
-  // );
 
   console.log(`\nUploading ${files.length} files from ${localPath}`);
 
