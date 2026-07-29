@@ -4,31 +4,32 @@ import getImageUrl from '../utils/getImageUrl';
 import { Helmet } from 'react-helmet-async';
 
 const factoryImages = [
-  '/uploads/gallery/factory/Video Short 1.jpg',
-  '/uploads/gallery/factory/Video Short 2.jpg',
-  '/uploads/gallery/factory/Video Short 3.jpg',
-  '/uploads/gallery/factory/Video Short 4.jpg',
-  '/uploads/gallery/factory/Video Short 5.jpg',
-  '/uploads/gallery/factory/Video Short 6.jpg',
-  '/uploads/gallery/factory/AA Welcome.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130306/deltatrophies/gallery/factory/AA%20Welcome.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130315/deltatrophies/gallery/factory/Video%20Short%201.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130321/deltatrophies/gallery/factory/Video%20Short%202.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130326/deltatrophies/gallery/factory/Video%20Short%203.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130328/deltatrophies/gallery/factory/Video%20Short%204.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130331/deltatrophies/gallery/factory/Video%20Short%205.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130334/deltatrophies/gallery/factory/Video%20Short%206.jpg',
 ];
+
 const annualMeetImages = [
-  '/uploads/gallery/events/annual-meet/0E1A9266.JPG',
-  '/uploads/gallery/events/annual-meet/0E1A9286.JPG',
-  '/uploads/gallery/events/annual-meet/0E1A9343.JPG',
-  '/uploads/gallery/events/annual-meet/0E1A9346.JPG',
-  '/uploads/gallery/events/annual-meet/0E1A9459.JPG',
-  '/uploads/gallery/events/annual-meet/0E1A9597.JPG',
-  '/uploads/gallery/events/annual-meet/0E1A9599.JPG',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130338/deltatrophies/gallery/annual-meet/0E1A9266.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130353/deltatrophies/gallery/annual-meet/0E1A9286.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130362/deltatrophies/gallery/annual-meet/0E1A9343.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130381/deltatrophies/gallery/annual-meet/0E1A9346.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130389/deltatrophies/gallery/annual-meet/0E1A9459.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130397/deltatrophies/gallery/annual-meet/0E1A9597.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130405/deltatrophies/gallery/annual-meet/0E1A9599.jpg',
 ];
 
 const exhibitionImages = [
-  '/uploads/gallery/events/exhibition/DSC_7678.JPG',
-  '/uploads/gallery/events/exhibition/DSC_7728.JPG',
-  '/uploads/gallery/events/exhibition/DSC_7758.JPG',
-  '/uploads/gallery/events/exhibition/DSC_7859.JPG',
-  '/uploads/gallery/events/exhibition/DSC_7880.JPG',
-  '/uploads/gallery/events/exhibition/IMG-20250325-WA0006.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130412/deltatrophies/gallery/exhibition/DSC_7678.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130418/deltatrophies/gallery/exhibition/DSC_7728.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785302100/deltatrophies/gallery/exhibition/DSC_7758.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130547/deltatrophies/gallery/exhibition/DSC_7859.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130553/deltatrophies/gallery/exhibition/DSC_7880.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130558/deltatrophies/gallery/exhibition/IMG-20250325-WA0006.jpg',
 ];
 
 const videos = [
@@ -71,7 +72,7 @@ function Gallery() {
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center px-4"
           onClick={() => setSelectedImage(null)}>
           <img
-            src={getImageUrl(selectedImage)}
+            src={selectedImage}
             alt="Gallery"
             className="max-w-4xl max-h-screen object-contain"
           />
@@ -124,7 +125,7 @@ function Gallery() {
                 onClick={() => setSelectedImage(img)}
                 className="break-inside-avoid cursor-pointer group relative overflow-hidden border border-gold/10 hover:border-gold transition-colors">
                 <img
-                  src={getImageUrl(img)}
+                  src={img}
                   alt={`Factory ${index + 1}`}
                   className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -151,7 +152,7 @@ function Gallery() {
         onClick={() => setSelectedImage(img)}
         className="break-inside-avoid cursor-pointer group relative overflow-hidden border border-gold/10 hover:border-gold transition-colors">
         <img
-          src={getImageUrl(img)}
+          src={img}
           alt={`Annual Meet ${index + 1}`}
           className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
@@ -178,7 +179,7 @@ function Gallery() {
         onClick={() => setSelectedImage(img)}
         className="break-inside-avoid cursor-pointer group relative overflow-hidden border border-gold/10 hover:border-gold transition-colors">
         <img
-          src={getImageUrl(img)}
+          src={img}
           alt={`Exhibition ${index + 1}`}
           className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
         />

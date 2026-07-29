@@ -41,7 +41,7 @@ function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src={getImageUrl('/uploads/gallery/factory/AA Welcome.jpg')}
+            src="https://res.cloudinary.com/aunwcpnr/image/upload/v1785130306/deltatrophies/gallery/factory/AA%20Welcome.jpg"
             alt="Delta Industries Factory"
             className="w-full h-full object-cover object-bottom filter brightness-[0.4] contrast-[1.05]"
           />
@@ -244,17 +244,17 @@ function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {[
               {
-                name: 'Gurdeep Singh',
-                role: 'Founder',
-                image: '/uploads/founders/founder_male_1.jpeg',
-                slogan: 'Excellence is not a destination — it is the standard we set every single day.'
-              },
-              {
-                name: 'Satwinder Kaur Bedi',
-                role: 'Co-Founder',
-                image: '/uploads/founders/founder_femlae_1.jpeg',
-                slogan: 'Behind every trophy is a story of perseverance — we are here to tell that story.'
-              }
+              name: 'Gurdeep Singh',
+              role: 'Founder',
+              image: 'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130561/deltatrophies/founders/founder-male.jpg',
+              slogan: 'Excellence is not a destination — it is the standard we set every single day.'
+            },
+            {
+              name: 'XYZ',
+              role: 'Co-Founder',
+              image: 'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130559/deltatrophies/founders/founder-female.jpg',
+              slogan: 'Behind every trophy is a story of perseverance — we are here to tell that story.'
+            }
             ].map((founder, index) => (
               <motion.div
                 key={index}
@@ -269,7 +269,7 @@ function Home() {
                   <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-gold to-amber-300 p-[1px] shadow-xl shadow-gold/10">
                     <div className="w-full h-full rounded-full overflow-hidden">
                       <img
-                        src={getImageUrl(founder.image)}
+                        src={founder.image}
                         alt={founder.name}
                         className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       />

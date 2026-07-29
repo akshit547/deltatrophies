@@ -7,14 +7,14 @@ const founders = [
   {
     name: 'Gurdeep Singh',
     role: 'Founder',
-    image: '/uploads/founders/founder_male_1.jpeg',
+    image: 'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130561/deltatrophies/founders/founder-male.jpg',
     slogan: 'Excellence is not a destination — it is the standard we set every single day.',
     bio: "With over 27 years of vision and dedication, Gurdeep Singh built Delta Industries from the ground up, transforming a simple dream into one of Punjab's most trusted trophy manufacturing companies."
   },
   {
-    name: 'Satwinder Kaur Bedi',
+    name: 'XYZ',
     role: 'Co-Founder',
-    image: '/uploads/founders/founder_femlae_1.jpeg',
+    image: 'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130559/deltatrophies/founders/founder-female.jpg',
     slogan: 'Behind every trophy is a story of perseverance — we are here to tell that story.',
     bio: "A pillar of strength behind Delta Industries, she has been instrumental in shaping the company's values, customer relationships, and the warmth that every client experiences."
   }
@@ -58,7 +58,7 @@ function Heritage() {
                   <div className="absolute -inset-2 border border-gold/20" />
                   <div className="absolute -inset-4 border border-gold/10" />
                   <img
-                    src={getImageUrl(founder.image  )}
+                    src={founder.image}
                     alt={founder.name}
                     className="w-full aspect-square object-cover object-top relative z-10"
                   />
