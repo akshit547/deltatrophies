@@ -4,32 +4,32 @@ import getImageUrl from '../utils/getImageUrl';
 import { Helmet } from 'react-helmet-async';
 
 const factoryImages = [
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130306/deltatrophies/gallery/factory/AA%20Welcome.jpg',
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130315/deltatrophies/gallery/factory/Video%20Short%201.jpg',
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130321/deltatrophies/gallery/factory/Video%20Short%202.jpg',
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130326/deltatrophies/gallery/factory/Video%20Short%203.jpg',
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130328/deltatrophies/gallery/factory/Video%20Short%204.jpg',
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130331/deltatrophies/gallery/factory/Video%20Short%205.jpg',
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130334/deltatrophies/gallery/factory/Video%20Short%206.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130306/deltatrophies/gallery/factory/AA%20Welcome.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130315/deltatrophies/gallery/factory/Video%20Short%201.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130321/deltatrophies/gallery/factory/Video%20Short%202.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130326/deltatrophies/gallery/factory/Video%20Short%203.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130328/deltatrophies/gallery/factory/Video%20Short%204.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130331/deltatrophies/gallery/factory/Video%20Short%205.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130334/deltatrophies/gallery/factory/Video%20Short%206.jpg',
 ];
 
 const annualMeetImages = [
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130338/deltatrophies/gallery/annual-meet/0E1A9266.jpg',
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130353/deltatrophies/gallery/annual-meet/0E1A9286.jpg',
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130362/deltatrophies/gallery/annual-meet/0E1A9343.jpg',
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130381/deltatrophies/gallery/annual-meet/0E1A9346.jpg',
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130389/deltatrophies/gallery/annual-meet/0E1A9459.jpg',
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130397/deltatrophies/gallery/annual-meet/0E1A9597.jpg',
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130405/deltatrophies/gallery/annual-meet/0E1A9599.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130338/deltatrophies/gallery/annual-meet/0E1A9266.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130353/deltatrophies/gallery/annual-meet/0E1A9286.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130362/deltatrophies/gallery/annual-meet/0E1A9343.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130381/deltatrophies/gallery/annual-meet/0E1A9346.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130389/deltatrophies/gallery/annual-meet/0E1A9459.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130397/deltatrophies/gallery/annual-meet/0E1A9597.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130405/deltatrophies/gallery/annual-meet/0E1A9599.jpg',
 ];
 
 const exhibitionImages = [
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130412/deltatrophies/gallery/exhibition/DSC_7678.jpg',
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130418/deltatrophies/gallery/exhibition/DSC_7728.jpg',
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785302100/deltatrophies/gallery/exhibition/DSC_7758.jpg',
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130547/deltatrophies/gallery/exhibition/DSC_7859.jpg',
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130553/deltatrophies/gallery/exhibition/DSC_7880.jpg',
-  'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130558/deltatrophies/gallery/exhibition/IMG-20250325-WA0006.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130412/deltatrophies/gallery/exhibition/DSC_7678.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130418/deltatrophies/gallery/exhibition/DSC_7728.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785302100/deltatrophies/gallery/exhibition/DSC_7758.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130547/deltatrophies/gallery/exhibition/DSC_7859.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130553/deltatrophies/gallery/exhibition/DSC_7880.jpg',
+  'https://res.cloudinary.com/aunwcpnr/image/upload/w_800,q_auto,f_auto/v1785130558/deltatrophies/gallery/exhibition/IMG-20250325-WA0006.jpg',
 ];
 
 const videos = [
