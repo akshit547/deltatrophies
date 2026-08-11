@@ -37,17 +37,6 @@ const distributors = [
     image: '/uploads/distributors/supreme-trophies.jpg',
   },
   {
-    id: 4,
-    shopName: 'Sharma Sports & Trophies',
-    contactPerson: 'Kashish Sharma',
-    phones: ['90452-23000'],
-    email: null,
-    address: 'DDI Road, Deoband Road',
-    city: 'Muzaffarnagar',
-    state: 'Uttar Pradesh',
-    image: '/uploads/distributors/sharma-sports.jpg',
-  },
-  {
   id: 5,
   shopName: 'Sunny Trophies',
   contactPerson: 'Sunny',
@@ -57,17 +46,6 @@ const distributors = [
   city: 'New Delhi',
   state: 'Delhi',
   image: '/uploads/distributors/sunny-delhi.jpg',
-},
-  {
-  id: 7,
-  shopName: 'Natraj Industries',
-  contactPerson: '',
-  phones: ['9855277805'], 
-  email: null,
-  address: 'Street No. 6, Malviya Nagar',
-  city: 'Bathinda',
-  state: 'Punjab',
-  image: '/uploads/distributors/natraj-industries.jpg',
 },
   {
   id: 8,
@@ -97,7 +75,7 @@ function Distributors() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="mb-6">
-          <p className="text-gold text-xs tracking-[0.4em] uppercase mb-2 font-semibold">
+          <p className="text-yellow-400 text-xs tracking-[0.4em] uppercase mb-2 font-semibold">
             Find Us Near You
           </p>
           <h1 className="text-white text-5xl font-bold mb-4">Our Distributors</h1>
@@ -114,9 +92,9 @@ function Distributors() {
           transition={{ delay: 0.3 }}
           className="flex gap-8 border-y border-gold/20 py-6 mb-16">
           {[
-            { number: '7+', label: 'Authorised Distributors' },
-            { number: '7+', label: 'Cities Covered' },
-            { number: '4+', label: 'States' },
+            { number: '5+', label: 'Authorised Distributors' },
+            { number: '5+', label: 'Cities Covered' },
+            { number: '3+', label: 'States' },
           ].map((stat, i) => (
             <div key={i}>
               <p className="text-gold text-2xl font-bold">{stat.number}</p>
@@ -198,7 +176,7 @@ function Distributors() {
                 {dist.phones.length > 0 && (
                   <a
                     href={`tel:+91${dist.phones[0].replace(/-/g, '')}`}
-                    className="inline-flex items-center gap-2 border border-gold/30 text-gold text-xs tracking-widest uppercase px-4 py-2 hover:bg-gold hover:text-darkbg transition-all duration-300 w-full justify-center mt-2">
+                    className="inline-flex items-center gap-2 border border-gold/30 text-yellow-400 text-xs tracking-widest uppercase px-4 py-2 hover:bg-gold hover:text-darkbg transition-all duration-300 w-full justify-center mt-2">
                     Call Now
                   </a>
                 )}

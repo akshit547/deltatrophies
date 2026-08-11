@@ -9,9 +9,15 @@ function Footer() {
 
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-yellow-400 text-xl font-bold tracking-wider">Delta</span>
-              <span className="text-yellow-400 text-xl tracking-[0.3em] uppercase">Industries</span>
-            </div>
+              <img
+    src="https://res.cloudinary.com/aunwcpnr/image/upload/v1786425474/deltatrophies/logo.png"
+    alt="Delta Industries"
+    className="h-10 w-auto"
+  />
+  <span className="text-yellow-400 text-xl font-bold tracking-wider hidden sm:block">
+    Delta Industries
+  </span>
+  </div>
             <p className="text-white/50 text-sm leading-relaxed">
               Crafting excellence since 1998. From hand-finished walnut bases to optical crystal sculptures.
             </p>

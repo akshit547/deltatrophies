@@ -14,7 +14,7 @@ function Navbar() {
     alt="Delta Industries"
     className="h-10 w-auto"
   />
-  <span className="text-white text-xl font-bold tracking-wider hidden sm:block">
+  <span className="text-yellow-400 text-xl font-bold tracking-wider hidden sm:block">
     Delta Industries
   </span>
 </Link>
