@@ -8,11 +8,16 @@ function Navbar() {
     <nav className="bg-darkbg border-b border-gold/20 fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-        <Link to="/" className="flex items-center gap-2">
-          <span className="text-white text-2xl font-bold tracking-wider">
-            Delta Industries
-          </span>
-        </Link>
+        <Link to="/" className="flex items-center gap-3">
+  <img
+    src="https://res.cloudinary.com/aunwcpnr/image/upload/v1786425474/deltatrophies/logo.png"
+    alt="Delta Industries"
+    className="h-10 w-auto"
+  />
+  <span className="text-white text-xl font-bold tracking-wider hidden sm:block">
+    Delta Industries
+  </span>
+</Link>
 
         <div className="hidden md:flex items-center gap-8">
           <Link to="/" className="text-white/70 hover:text-yellow-400 text-sm tracking-widest uppercase transition-colors">
