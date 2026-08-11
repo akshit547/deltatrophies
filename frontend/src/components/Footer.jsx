@@ -9,8 +9,8 @@ function Footer() {
 
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-white text-2xl font-bold tracking-wider">Delta.</span>
-              <span className="text-gold text-xs tracking-[0.3em] uppercase">Industries</span>
+              <span className="text-yellow-400 text-xl font-bold tracking-wider">Delta</span>
+              <span className="text-yellow-400 text-xl tracking-[0.3em] uppercase">Industries</span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed">
               Crafting excellence since 1998. From hand-finished walnut bases to optical crystal sculptures.
