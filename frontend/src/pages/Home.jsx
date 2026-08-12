@@ -45,7 +45,7 @@ function Home() {
     muted
     loop
     playsInline
-    className="w-full h-full object-cover filter brightness-[0.45]"
+    className="w-full h-full object-cover filter brightness-[0.75]"
   >
     <source
       src="https://res.cloudinary.com/aunwcpnr/video/upload/v1786504893/deltatrophies/hero-video.mp4"
