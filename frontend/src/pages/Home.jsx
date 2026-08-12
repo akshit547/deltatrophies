@@ -38,17 +38,29 @@ function Home() {
         <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-gold/10 rounded-full blur-[150px] pointer-events-none z-10" />
         <div className="absolute bottom-1/4 right-10 w-[300px] h-[300px] bg-white/5 rounded-full blur-[120px] pointer-events-none z-10" />
 
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://res.cloudinary.com/aunwcpnr/image/upload/v1785130306/deltatrophies/gallery/factory/AA%20Welcome.jpg"
-            alt="Delta Industries Factory"
-            className="w-full h-full object-cover object-bottom filter brightness-[0.4] contrast-[1.05]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-darkbg via-darkbg/85 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-darkbg via-transparent to-darkbg/40" />
-        </div>
-
+        {/* Background Video */}
+<div className="absolute inset-0 z-0">
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="w-full h-full object-cover filter brightness-[0.35]"
+  >
+    <source
+      src="https://res.cloudinary.com/aunwcpnr/video/upload/v1786504893/deltatrophies/hero-video.mp4"
+      type="video/mp4"
+    />
+    {/* Fallback image if video doesn't load */}
+    <img
+      src="https://res.cloudinary.com/aunwcpnr/image/upload/v1785130306/deltatrophies/gallery/factory/AA%20Welcome.jpg"
+      alt="Delta Industries"
+      className="w-full h-full object-cover"
+    />
+  </video>
+  <div className="absolute inset-0 bg-gradient-to-r from-darkbg via-darkbg/80 to-darkbg/40" />
+  <div className="absolute inset-0 bg-gradient-to-t from-darkbg via-transparent to-darkbg/30" />
+</div>
         {/* Big Background Typography */}
         <div className="absolute right-[-2%] bottom-[12%] select-none pointer-events-none hidden lg:block z-0">
           <h2 className="text-[13vw] font-bold leading-none uppercase tracking-tighter text-transparent opacity-5"

@@ -41,7 +41,7 @@ function Navbar() {
         </div>
 
         <a
-          href="tel:+919216577789"
+          href="tel:+919115679399"
           className="hidden md:inline-flex items-center justify-center gap-2 px-4 py-2 bg-yellow-400 text-black text-sm font-semibold tracking-wider rounded-md hover:opacity-90 transition-opacity">
           <svg
             className="w-4 h-4"
@@ -71,7 +71,7 @@ function Navbar() {
 
           {/* Call Now button in mobile menu */}
           <a
-            href="tel:+919216577789"
+            href="tel:+91 9115679399"
             className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-yellow-400 text-black text-sm font-semibold tracking-wider rounded-md hover:opacity-90 transition-opacity mt-2">
             <svg
               className="w-4 h-4"
