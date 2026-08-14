@@ -5,7 +5,9 @@ const pool = require('../config/db');
 // GET all categories
 router.get('/', async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM categories ORDER BY name');
+    const result = await pool.query(
+      'SELECT * FROM categories ORDER BY display_order ASC, name ASC'
+    );
     res.json({ success: true, categories: result.rows });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
