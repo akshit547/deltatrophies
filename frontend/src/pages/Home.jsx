@@ -167,31 +167,30 @@ function Home() {
           <Link
   key={category.id}
   to={`/collections?category=${category.slug}`}
-  className="group relative flex-shrink-0 w-64 h-80 overflow-hidden border border-gold/20 hover:border-gold transition-all duration-300 bg-white"
+  className="group relative flex-shrink-0 w-64 h-80 overflow-hidden border border-gold/20 hover:border-gold transition-all duration-300 bg-white flex flex-col"
 >
-  {/* Real product photo as background */}
-  <img
-    src={getImageUrl(category.thumbnail)}
-    alt={category.name}
-    className="absolute inset-0 w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500"
-  />
+  {/* Photo area */}
+  <div className="flex-1 flex items-center justify-center overflow-hidden">
+    <img
+      src={getImageUrl(category.thumbnail)}
+      alt={category.name}
+      className="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500"
+    />
+  </div>
 
-  {/* Dark gradient overlay for text readability — only at bottom */}
-  <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/85 to-transparent" />
-
-  {/* Category name */}
-  <div className="absolute bottom-0 left-0 right-0 p-5">
-    <p className="text-white group-hover:text-black text-sm font-semibold tracking-wider uppercase transition-colors duration-300">
+  {/* Solid dark label bar — not a gradient over the photo */}
+  <div className="bg-darkbg border-t border-gold/20 px-5 py-4">
+    <p className="text-white group-hover:text-gold text-sm font-semibold tracking-wider uppercase transition-colors duration-300">
       {category.name}
     </p>
-    <p className="text-black text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-widest">
+    <p className="text-gold text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-widest">
       Explore →
     </p>
   </div>
 
-  {/* Corner accents */}
+  {/* Corner accents on photo area only */}
   <div className="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-gold/40 group-hover:border-gold transition-colors duration-300 z-10" />
-  <div className="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 border-gold/40 group-hover:border-gold transition-colors duration-300 z-10" />
+  <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-gold/40 group-hover:border-gold transition-colors duration-300 z-10" />
 </Link>
         ))}
       </div>
