@@ -138,62 +138,80 @@ function Home() {
       </section>
 
       {/* Categories Section */}
-      <section className="max-w-7xl mx-auto px-6 py-28 relative z-20">
-        <div className="flex items-end justify-between mb-16">
-          <div>
-            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3 font-semibold">
-              Our Collections
-            </p>
-            <h2 className="text-white text-3xl md:text-4xl font-bold font-serif tracking-tight">
-              Browse by Category
-            </h2>
-          </div>
-          <Link to="/collections"
-            className="group text-gold text-xs tracking-widest uppercase hover:text-white transition-colors duration-300 flex items-center gap-2">
-            View All <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+      {/* Categories Carousel */}
+<div className="bg-darkbg w-full">
+  <section className="max-w-7xl mx-auto px-6 py-20">
+    <div className="flex items-end justify-between mb-12">
+      <div>
+        <p className="text-gold text-xs tracking-[0.4em] uppercase mb-2">
+          Our Collections
+        </p>
+        <h2 className="text-white text-4xl font-bold">
+          Browse by Category
+        </h2>
+      </div>
+      <Link to="/collections"
+        className="text-gold text-xs tracking-widest uppercase hover:text-gold/70 transition-colors hidden md:block">
+        View All →
+      </Link>
+    </div>
+
+    {/* Carousel Track */}
+    <div className="relative">
+      <div
+        id="category-carousel"
+        className="flex gap-4 overflow-x-auto scroll-smooth pb-4"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
+        {categories.map((category) => (
+          <Link
+            key={category.id}
+            to={`/collections?category=${category.slug}`}
+            className="group relative flex-shrink-0 w-64 h-80 overflow-hidden border border-gold/20 hover:border-gold transition-all duration-300"
+          >
+            {/* Real product photo as background */}
+            <img
+              src={getImageUrl(category.thumbnail)}
+              alt={category.name}
+              className="absolute inset-0 w-full h-full object-cover bg-white group-hover:scale-110 transition-transform duration-500"
+            />
+
+            {/* Dark gradient overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-darkbg via-darkbg/30 to-transparent" />
+
+            {/* Category name */}
+            <div className="absolute bottom-0 left-0 right-0 p-5">
+              <p className="text-white group-hover:text-gold text-sm font-semibold tracking-wider uppercase transition-colors duration-300">
+                {category.name}
+              </p>
+              <p className="text-gold text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-widest">
+                Explore →
+              </p>
+            </div>
+
+            {/* Corner accents */}
+            <div className="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-gold/40 group-hover:border-gold transition-colors duration-300" />
+            <div className="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 border-gold/40 group-hover:border-gold transition-colors duration-300" />
           </Link>
-        </div>
+        ))}
+      </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {categories.map((category, index) => (
-            <motion.div
-              key={category.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: index * 0.08, duration: 0.6 }}>
-              <Link
-                to={`/collections?category=${category.slug}`}
-                className="group relative block overflow-hidden rounded-lg bg-gradient-to-b from-white/[0.04] to-transparent border border-white/[0.06] hover:border-gold/50 transition-all duration-500 hover:shadow-2xl hover:shadow-gold/5">
-                <div className="aspect-square flex flex-col items-center justify-between p-6 relative">
-
-                  <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                  <div className="absolute top-0 right-0 w-6 h-6 border-t border-r border-white/10 group-hover:border-gold/40 transition-colors duration-300" />
-                  <div className="absolute bottom-0 left-0 w-6 h-6 border-b border-l border-white/10 group-hover:border-gold/40 transition-colors duration-300" />
-
-                  <div className="text-4xl mt-4 select-none transform group-hover:scale-125 group-hover:-rotate-6 transition-all duration-500 ease-out">
-                    {index % 5 === 0 ? '🏆' :
-                     index % 5 === 1 ? '🥇' :
-                     index % 5 === 2 ? '🎖️' :
-                     index % 5 === 3 ? '🏅' : '⭐'}
-                  </div>
-
-                  <div className="w-full text-center z-10">
-                    <p className="text-white/80 group-hover:text-gold text-xs tracking-wider uppercase font-medium transition-colors duration-300">
-                      {category.name}
-                    </p>
-                    <p className="text-gold text-[10px] tracking-[0.25em] uppercase mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                      Explore →
-                    </p>
-                  </div>
-
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
+      {/* Left/Right scroll buttons */}
+      <button
+        onClick={() => document.getElementById('category-carousel').scrollBy({ left: -280, behavior: 'smooth' })}
+        className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-darkbg border border-gold/30 text-gold items-center justify-center hover:bg-gold hover:text-darkbg transition-colors z-10"
+      >
+        ←
+      </button>
+      <button
+        onClick={() => document.getElementById('category-carousel').scrollBy({ left: 280, behavior: 'smooth' })}
+        className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-darkbg border border-gold/30 text-gold items-center justify-center hover:bg-gold hover:text-darkbg transition-colors z-10"
+      >
+        →
+      </button>
+    </div>
+  </section>
+</div>
       {/* Featured Products */}
       <section className="max-w-7xl mx-auto px-6 py-24 relative z-20">
         <div className="text-center md:text-left mb-16">
