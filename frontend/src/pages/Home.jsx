@@ -181,10 +181,10 @@ function Home() {
 
   {/* Category name */}
   <div className="absolute bottom-0 left-0 right-0 p-5">
-    <p className="text-white group-hover:text-gold text-sm font-semibold tracking-wider uppercase transition-colors duration-300">
+    <p className="text-white group-hover:text-black text-sm font-semibold tracking-wider uppercase transition-colors duration-300">
       {category.name}
     </p>
-    <p className="text-gold text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-widest">
+    <p className="text-black text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-widest">
       Explore →
     </p>
   </div>

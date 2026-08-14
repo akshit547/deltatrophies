@@ -13,10 +13,13 @@ import AdminLogin from './pages/admin/Login';
 import Dashboard from './pages/admin/Dashboard';
 import ManageProducts from './pages/admin/ManageProducts';
 import Leads from './pages/admin/Leads';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <BrowserRouter>
+
+      <ScrollToTop />
       <Navbar />
       <LeadPopup />
       <Routes>
