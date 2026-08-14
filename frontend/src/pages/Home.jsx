@@ -165,34 +165,34 @@ function Home() {
       >
         {categories.map((category) => (
           <Link
-            key={category.id}
-            to={`/collections?category=${category.slug}`}
-            className="group relative flex-shrink-0 w-64 h-80 overflow-hidden border border-gold/20 hover:border-gold transition-all duration-300"
-          >
-            {/* Real product photo as background */}
-            <img
-              src={getImageUrl(category.thumbnail)}
-              alt={category.name}
-              className="absolute inset-0 w-full h-full object-cover bg-white group-hover:scale-110 transition-transform duration-500"
-            />
+  key={category.id}
+  to={`/collections?category=${category.slug}`}
+  className="group relative flex-shrink-0 w-64 h-80 overflow-hidden border border-gold/20 hover:border-gold transition-all duration-300 bg-white"
+>
+  {/* Real product photo as background */}
+  <img
+    src={getImageUrl(category.thumbnail)}
+    alt={category.name}
+    className="absolute inset-0 w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500"
+  />
 
-            {/* Dark gradient overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-darkbg via-darkbg/30 to-transparent" />
+  {/* Dark gradient overlay for text readability — only at bottom */}
+  <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/85 to-transparent" />
 
-            {/* Category name */}
-            <div className="absolute bottom-0 left-0 right-0 p-5">
-              <p className="text-white group-hover:text-gold text-sm font-semibold tracking-wider uppercase transition-colors duration-300">
-                {category.name}
-              </p>
-              <p className="text-gold text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-widest">
-                Explore →
-              </p>
-            </div>
+  {/* Category name */}
+  <div className="absolute bottom-0 left-0 right-0 p-5">
+    <p className="text-white group-hover:text-gold text-sm font-semibold tracking-wider uppercase transition-colors duration-300">
+      {category.name}
+    </p>
+    <p className="text-gold text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-widest">
+      Explore →
+    </p>
+  </div>
 
-            {/* Corner accents */}
-            <div className="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-gold/40 group-hover:border-gold transition-colors duration-300" />
-            <div className="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 border-gold/40 group-hover:border-gold transition-colors duration-300" />
-          </Link>
+  {/* Corner accents */}
+  <div className="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-gold/40 group-hover:border-gold transition-colors duration-300 z-10" />
+  <div className="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 border-gold/40 group-hover:border-gold transition-colors duration-300 z-10" />
+</Link>
         ))}
       </div>
 
