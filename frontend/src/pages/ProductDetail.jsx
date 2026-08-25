@@ -57,7 +57,7 @@ function ProductDetail() {
     <div className="bg-darkbg min-h-screen pt-24">
       <Helmet>
   <title>{product.name} | Delta Industries Jalandhar</title>
-  <meta name="description" content={product.description} />
+  <meta name="description" content={product.description || `${product.name} — premium ${product.category_name || 'trophy'} from Delta Industries, Jalandhar. Custom awards and corporate mementos since 1998.`}/>
   <meta name="keywords" content={`trophy, award, ${product.category_name}, custom trophy, ${product.name}, Delta Industries Jalandhar`} />
 </Helmet>
       <div className="max-w-7xl mx-auto px-6 py-12">

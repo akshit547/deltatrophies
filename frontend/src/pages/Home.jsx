@@ -130,7 +130,7 @@ function Home() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2">
+          className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex-col items-center gap-2">
           <p className="text-white/30 text-xs tracking-widest uppercase">Scroll</p>
           <div className="w-px h-8 bg-gradient-to-b from-gold/50 to-transparent" />
         </motion.div>

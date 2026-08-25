@@ -14,6 +14,7 @@ import Dashboard from './pages/admin/Dashboard';
 import ManageProducts from './pages/admin/ManageProducts';
 import Leads from './pages/admin/Leads';
 import ScrollToTop from './components/ScrollToTop';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -34,11 +35,12 @@ function App() {
         <Route path="/admin/dashboard" element={<Dashboard />} />
         <Route path="/admin/products" element={<ManageProducts />} />
         <Route path="/admin/leads" element={<Leads />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       {/* WhatsApp Floating Button */}
       <a
-        href="https://wa.me/919216577789"
+        href="https://wa.me/919115679399"
         target="_blank"
         rel="noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-400 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-colors">

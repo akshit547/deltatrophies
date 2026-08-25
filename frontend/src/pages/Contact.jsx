@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import API from '../api/axios';
 import { Helmet } from 'react-helmet-async';
+
 const salesTeam = [
   { name: 'Komal', phone: '92165-77789' },
   { name: 'Navneet', phone: '87596-66665' },
@@ -29,9 +30,10 @@ function Contact() {
   return (
     <div className="bg-darkbg w-full min-h-screen text-white">
       <Helmet>
-  <title>Contact Us — Delta Industries Jalandhar | Trophy Manufacturer</title>
-  <meta name="description" content="Contact Delta Industries for custom trophy orders, bulk enquiries and dealership. Trophy manufacturer in Jalandhar, Punjab. Call +91 92165 77789." />
-</Helmet>
+        <title>Contact Us — Delta Industries Jalandhar | Trophy Manufacturer</title>
+        <meta name="description" content="Contact Delta Industries for custom trophy orders, bulk enquiries and dealership. Trophy manufacturer in Jalandhar, Punjab. Call +91 92165 77789." />
+      </Helmet>
+
       <div className="max-w-7xl mx-auto px-6 pt-32 pb-20">
 
         {/* Header */}
@@ -105,7 +107,7 @@ function Contact() {
 
             {/* WhatsApp Button */}
             <a 
-              href="https://wa.me/919216577789"
+              href="https://wa.me/919115679399"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-500 text-white font-bold px-6 py-3 tracking-wider uppercase text-xs transition-colors rounded-sm">
@@ -177,6 +179,26 @@ function Contact() {
           </motion.div>
 
         </div>
+
+http://googleusercontent.com/map_location_reference/1
+        {/* Google Map Section for [Delta Souvenirs Pvt Ltd](http://googleusercontent.com/map_location_reference/0) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="mt-16 border border-white/[0.06] overflow-hidden">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.4571601665684!2d75.51642477488356!3d31.401528274268564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a4f64b7c9fb9f%3A0xc86f38e473824c27!2sDelta%20Souvenirs%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1787626418363!5m2!1sen!2sin"
+            width="100%"
+            height="400"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+            title="Delta Souvenirs Pvt Ltd Location"
+          />
+        </motion.div>
+
       </div>
     </div>
   );
