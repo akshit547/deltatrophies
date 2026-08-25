@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import API from '../api/axios';
 
 function LeadPopup() {
+  const location = useLocation();
   const [show, setShow] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -11,6 +13,9 @@ function LeadPopup() {
   });
 
   useEffect(() => {
+    const isAdminPage = location.pathname.startsWith('/admin');
+    if (isAdminPage) return;
+
     const alreadySeen = localStorage.getItem('leadPopupSeen');
     if (!alreadySeen) {
       const timer = setTimeout(() => {
@@ -18,7 +23,7 @@ function LeadPopup() {
       }, 3000);
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [location.pathname]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -49,6 +54,7 @@ function LeadPopup() {
 
         <button
           onClick={handleClose}
+          aria-label="Close popup"
           className="absolute top-4 right-4 text-white/50 hover:text-gold text-xl">
           ✕
         </button>
@@ -69,33 +75,48 @@ function LeadPopup() {
             </p>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="bg-white/5 border border-gold/20 rounded px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold text-sm"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="bg-white/5 border border-gold/20 rounded px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold text-sm"
-              />
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-                className="bg-white/5 border border-gold/20 rounded px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold text-sm"
-              />
+              <div>
+                <label htmlFor="popup-name" className="sr-only">Your Name</label>
+                <input
+                  id="popup-name"
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  autoComplete="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-white/5 border border-gold/20 rounded px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold text-sm"
+                />
+              </div>
+              <div>
+                <label htmlFor="popup-email" className="sr-only">Email Address</label>
+                <input
+                  id="popup-email"
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  autoComplete="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-white/5 border border-gold/20 rounded px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold text-sm"
+                />
+              </div>
+              <div>
+                <label htmlFor="popup-phone" className="sr-only">Phone Number</label>
+                <input
+                  id="popup-phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number"
+                  autoComplete="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-white/5 border border-gold/20 rounded px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold text-sm"
+                />
+              </div>
               <button
                 type="submit"
                 className="bg-gold text-darkbg font-bold py-3 rounded tracking-widest uppercase text-sm hover:bg-gold/90 transition-colors">

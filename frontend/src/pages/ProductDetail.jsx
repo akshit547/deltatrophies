@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import API from '../api/axios';
 import getImageUrl from '../utils/getImageUrl';
-import { Helmet } from 'react-helmet-async';
 
 function ProductDetail() {
   const { id } = useParams();
@@ -56,10 +56,13 @@ function ProductDetail() {
   return (
     <div className="bg-darkbg min-h-screen pt-24">
       <Helmet>
-  <title>{product.name} | Delta Industries Jalandhar</title>
-  <meta name="description" content={product.description || `${product.name} — premium ${product.category_name || 'trophy'} from Delta Industries, Jalandhar. Custom awards and corporate mementos since 1998.`}/>
-  <meta name="keywords" content={`trophy, award, ${product.category_name}, custom trophy, ${product.name}, Delta Industries Jalandhar`} />
-</Helmet>
+        <title>{product.name} | Delta Industries Jalandhar</title>
+        <meta
+          name="description"
+          content={product.description || `${product.name} — premium ${product.category_name || 'trophy'} from Delta Industries, Jalandhar. Custom awards and corporate mementos since 1998.`}
+        />
+      </Helmet>
+
       <div className="max-w-7xl mx-auto px-6 py-12">
 
         {/* Breadcrumb */}
@@ -75,22 +78,20 @@ function ProductDetail() {
 
           {/* Images */}
           <div>
-            {/* Main Image */}
             <div
-  className="bg-white border border-gold/20 flex items-center justify-center mb-4"
-  style={{ height: '600px' }}>
-  {product.images && product.images.length > 0 ? (
-    <img
-      src={getImageUrl(product.images[selectedImage])}
-      alt={product.name}
-      style={{ maxHeight: '600px', maxWidth: '100%', objectFit: 'contain', padding: '16px' }}
-    />
+              className="bg-white border border-gold/20 flex items-center justify-center mb-4"
+              style={{ height: '600px' }}>
+              {product.images && product.images.length > 0 ? (
+                <img
+                  src={getImageUrl(product.images[selectedImage])}
+                  alt={product.name}
+                  style={{ maxHeight: '600px', maxWidth: '100%', objectFit: 'contain', padding: '16px' }}
+                />
               ) : (
                 <p className="text-darkbg/30 text-sm">No Image Available</p>
               )}
             </div>
 
-            {/* Thumbnail Images */}
             {product.images && product.images.length > 1 && (
               <div className="flex gap-2 flex-wrap">
                 {product.images.map((img, index) => (
@@ -155,37 +156,61 @@ function ProductDetail() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    required
-                    className="bg-white/5 border border-gold/20 px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold text-sm"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    required
-                    className="bg-white/5 border border-gold/20 px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold text-sm"
-                  />
-                  <input
-                    type="tel"
-                    placeholder="Phone Number"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    required
-                    className="bg-white/5 border border-gold/20 px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold text-sm"
-                  />
-                  <textarea
-                    placeholder="Your message (optional)"
-                    value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    rows={3}
-                    className="bg-white/5 border border-gold/20 px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold text-sm resize-none"
-                  />
+                  <div>
+                    <label htmlFor="enquiry-name" className="sr-only">Your Name</label>
+                    <input
+                      id="enquiry-name"
+                      name="name"
+                      type="text"
+                      placeholder="Your Name"
+                      autoComplete="name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      required
+                      className="w-full bg-white/5 border border-gold/20 px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="enquiry-email" className="sr-only">Email Address</label>
+                    <input
+                      id="enquiry-email"
+                      name="email"
+                      type="email"
+                      placeholder="Email Address"
+                      autoComplete="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      required
+                      className="w-full bg-white/5 border border-gold/20 px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="enquiry-phone" className="sr-only">Phone Number</label>
+                    <input
+                      id="enquiry-phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="Phone Number"
+                      autoComplete="tel"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      required
+                      className="w-full bg-white/5 border border-gold/20 px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="enquiry-message" className="sr-only">Your message (optional)</label>
+                    <textarea
+                      id="enquiry-message"
+                      name="message"
+                      placeholder="Your message (optional)"
+                      autoComplete="off"
+                      value={formData.message}
+                      onChange={(e) => setFormData({...formData, message: e.target.value})}
+                      rows={3}
+                      className="w-full bg-white/5 border border-gold/20 px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold text-sm resize-none"
+                    />
+                  </div>
                   <button
                     type="submit"
                     className="bg-gold text-darkbg font-bold py-3 tracking-widest uppercase text-sm hover:bg-gold/90 transition-colors">
@@ -198,7 +223,6 @@ function ProductDetail() {
           </div>
         </div>
       </div>
-      
     </div>
   );
 }
