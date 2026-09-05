@@ -48,15 +48,14 @@ function Home() {
     className="w-full h-full object-cover filter brightness-[0.75]"
   >
     <source
-      src="https://res.cloudinary.com/aunwcpnr/video/upload/v1786504893/deltatrophies/hero-video.mp4"
-      type="video/mp4"
-    />
-    {/* Fallback image if video doesn't load */}
-    <img
-      src="https://res.cloudinary.com/aunwcpnr/image/upload/v1785130306/deltatrophies/gallery/factory/AA%20Welcome.jpg"
-      alt="Delta Industries"
-      className="w-full h-full object-cover"
-    />
+  src="https://res.cloudinary.com/gufssbcd/video/upload/v1788566912/deltatrophies/hero"
+  type="video/mp4"
+/>
+<img
+  src="https://res.cloudinary.com/gufssbcd/image/upload/v1788566868/deltatrophies/gallery/factory/AA%20Welcome.jpg"
+  alt="Delta Industries"
+  className="w-full h-full object-cover"
+/>
   </video>
   <div className="absolute inset-0 bg-gradient-to-r from-darkbg via-darkbg/80 to-darkbg/40" />
   <div className="absolute inset-0 bg-gradient-to-t from-darkbg via-transparent to-darkbg/30" />
@@ -275,13 +274,13 @@ function Home() {
               {
               name: 'Gurdeep Singh',
               role: 'Founder',
-              image: 'https://res.cloudinary.com/aunwcpnr/image/upload/v1785130568/deltatrophies/founders/founder_male_1.jpg',
+              image: 'https://res.cloudinary.com/gufssbcd/image/upload/v1788566962/deltatrophies/founders/founder_male_1.jpg',
               slogan: 'Excellence is not a destination — it is the standard we set every single day.'
             },
             {
               name: 'Satwinder Kaur Bedi',
               role: 'Co-Founder',
-              image: 'https://res.cloudinary.com/aunwcpnr/image/upload/v1785314242/deltatrophies/founders/founder_female_1.jpg',
+              image: 'https://res.cloudinary.com/gufssbcd/image/upload/v1788566959/deltatrophies/founders/founder_female_1.jpg',
               slogan: 'Behind every trophy is a story of perseverance — we are here to tell that story.'
             }
             ].map((founder, index) => (
